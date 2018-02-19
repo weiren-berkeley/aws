@@ -1,8 +1,29 @@
+
+rt time
 import serial
+print "Starting program"
+ser = serial.Serial('/dev/ttyAMA0', baudrate=9600,
+                    parity=serial.PARITY_NONE,
+                    stopbits=serial.STOPBITS_ONE,
+                    bytesize=serial.EIGHTBITS
+                    )
+time.sleep(1)
+try:
+    ser.write('Hello World\r\n')
+    ser.write('Serial Communication Using Raspberry Pi\r\n')
+    ser.write('By: Embedded Laboratory\r\n')
+    print 'Data Echo Mode Enabled'
+    while True:
+        if ser.inWaiting() > 0:
+            data = ser.read()
+            print data
+        
+except KeyboardInterrupt:
+    print "Exiting Program"
 
-port = serial.Serial("/dev/ttyAMA0", baudrate=115200, timeout=3.0)
+except:
+    print "Error Occurs, Exiting Program"
 
-while True:
-    port.write("\r\nSay something:")
-    rcv = port.read(10)
-    port.write("\r\nYou sent:" + repr(rcv))
+finally:
+    ser.close()
+    pass
