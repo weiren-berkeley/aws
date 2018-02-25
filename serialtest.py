@@ -10,7 +10,7 @@ time.sleep(1)
 try:
     ser.write('Hello World\r\n')
     ser.write('Serial Communication Using Raspberry Pi\r\n')
-    ser.write('By: Embedded Laboratory\r\n')
+    ser.write('By: Wei Ren\r\n')
     print 'Data Echo Mode Enabled'
     while True:
         if ser.inWaiting() > 0:
