@@ -14,7 +14,7 @@ try:
     print 'Data Echo Mode Enabled'
     while True:
         if ser.inWaiting() > 0:
-            data = ser.read()
+            data = ser.readline()
             print data
         
 except KeyboardInterrupt:
