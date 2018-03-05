@@ -1,5 +1,6 @@
 import time
 import serial
+import random
 print "Starting program"
 ser = serial.Serial('/dev/ttyS0', baudrate=115200,
                     parity=serial.PARITY_NONE,
@@ -11,7 +12,8 @@ try:
     print 'Starting sending data from uart.'
     while True:
         time.sleep(1)
-        ser.write('Hello World From Raspberry Pi\r\n')
+        angle1 = random.random()
+        ser.write('Angle1 = '+ str(angle1); + '\r\n')
         if ser.inWaiting() > 0:
             data = ser.readline()
             print data
