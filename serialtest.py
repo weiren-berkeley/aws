@@ -20,13 +20,13 @@ try:
         angle6 = random.random() + 6
         angle7 = random.random() + 7
         ser.write('B\n')
-        ser.write(str(angle1) + '\r\n')
-        ser.write(str(angle2) + '\r\n')
-        ser.write(str(angle3) + '\r\n')
-        ser.write(str(angle4) + '\r\n')
-        ser.write(str(angle5) + '\r\n')
-        ser.write(str(angle6) + '\r\n')
-        ser.write(str(angle7) + '\r\n')
+        ser.write(str(angle1) + '\n')
+        ser.write(str(angle2) + '\n')
+        ser.write(str(angle3) + '\n')
+        ser.write(str(angle4) + '\n')
+        ser.write(str(angle5) + '\n')
+        ser.write(str(angle6) + '\n')
+        ser.write(str(angle7) + '\n')
         ser.write('E\n')
         if ser.inWaiting() > 0:
             data = ser.readline()
