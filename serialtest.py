@@ -3,7 +3,7 @@ import serial
 print "Starting program"
 ser = serial.Serial('/dev/ttyS0', baudrate=9600,
                     parity=serial.PARITY_NONE,
-                    stopbits=serial.STOPBITS_ONE,
+                    stopbits=serial.STOPBITS_TWO,
                     bytesize=serial.EIGHTBITS
                     )
 
