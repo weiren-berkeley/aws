@@ -19,7 +19,7 @@ try:
         angle5 = random.random() + 5
         angle6 = random.random() + 6
         angle7 = random.random() + 7
-        ser.write('B')
+        ser.write('B\n')
         ser.write(str(angle1) + '\r\n')
         ser.write(str(angle2) + '\r\n')
         ser.write(str(angle3) + '\r\n')
@@ -27,7 +27,7 @@ try:
         ser.write(str(angle5) + '\r\n')
         ser.write(str(angle6) + '\r\n')
         ser.write(str(angle7) + '\r\n')
-        ser.write('E')
+        ser.write('E\n')
         if ser.inWaiting() > 0:
             data = ser.readline()
             print data
