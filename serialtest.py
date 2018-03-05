@@ -6,17 +6,16 @@ ser = serial.Serial('/dev/ttyS0', baudrate=9600,
                     stopbits=serial.STOPBITS_ONE,
                     bytesize=serial.EIGHTBITS
                     )
-time.sleep(1)
+
 try:
-    ser.write('Hello World\r\n')
-    ser.write('Serial Communication Using Raspberry Pi\r\n')
-    ser.write('By: Wei Ren\r\n')
-    print 'Data Echo Mode Enabled'
+    print 'Starting sending data from uart.'
     while True:
+        time.sleep(1)
+        ser.write('Hello World From Raspberry Pi\r\n')
         if ser.inWaiting() > 0:
             data = ser.readline()
             print data
-        
+
 except KeyboardInterrupt:
     print "Exiting Program"
 
