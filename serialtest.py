@@ -13,7 +13,7 @@ try:
     while True:
         time.sleep(1)
         angle1 = random.random()
-        ser.write('Angle1 = '+ str(angle1); + '\r\n')
+        ser.write('Angle1 = '+ str(angle1) + ';\r\n')
         if ser.inWaiting() > 0:
             data = ser.readline()
             print data
